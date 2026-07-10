@@ -1,13 +1,13 @@
-# Unity Event Bus (Refactored)
+# Unity Event Bus
 
 A type-safe, **zero-allocation**, **reflection-free** static event bus for Unity, packaged as a
-proper UPM package with tests. This is a ground-up refactor of
-[adammyhre/Unity-Event-Bus](https://github.com/adammyhre/Unity-Event-Bus) (MIT) — same
-public usage pattern, different internals.
+proper UPM package with tests. Written from scratch, inspired by the event bus pattern popularized
+by [adammyhre/Unity-Event-Bus](https://github.com/adammyhre/Unity-Event-Bus) — same familiar
+usage pattern, completely different internals.
 
-## Why refactor?
+## Why another event bus?
 
-| Original | Problem | This version |
+| Typical implementation (e.g. the original) | Problem | This version |
 |---|---|---|
 | `using UnityEditor;` outside `#if UNITY_EDITOR` | **Player builds fail to compile** | Editor code isolated in an Editor-only assembly |
 | `PredefinedAssemblyUtil` scans only `Assembly-CSharp` / `-firstpass` | Events in **asmdef assemblies are never found**, so their buses are never cleared | No scanning at all — buses self-register via static constructor on first use |
@@ -114,7 +114,10 @@ EventBusRegistry.ClearAll(); // e.g. between integration tests
 
 EditMode tests live in `Tests/Editor`. Run them via `Window ▸ General ▸ Test Runner`.
 
-## Credits
+## License
 
-- Original design and tutorial: [adammyhre (git-amend)](https://github.com/adammyhre/Unity-Event-Bus) — [video](https://youtu.be/4_DTAnigmaQ)
-- License: MIT (see `LICENSE`, both copyrights retained)
+MIT — see `LICENSE`.
+
+## Inspired by
+
+- [adammyhre/Unity-Event-Bus](https://github.com/adammyhre/Unity-Event-Bus) — [tutorial video](https://youtu.be/4_DTAnigmaQ)

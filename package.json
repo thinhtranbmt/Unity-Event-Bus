@@ -1,8 +1,8 @@
 {
     "name": "com.thinhtranbmt.unity-event-bus",
     "version": "1.0.0",
-    "displayName": "Unity Event Bus (Refactored)",
-    "description": "Type-safe, zero-allocation, reflection-free static event bus for Unity. A refactor of adammyhre/Unity-Event-Bus: the reflection + assembly-scanning bootstrap is replaced by self-registering buses, Raise() no longer allocates, and the code ships as a proper UPM package with EditMode tests.",
+    "displayName": "Unity Event Bus",
+    "description": "Type-safe, zero-allocation, reflection-free static event bus for Unity. Buses self-register on first use (no reflection or assembly scanning), Raise() never allocates, and the code ships as a proper UPM package with EditMode tests. Inspired by adammyhre/Unity-Event-Bus.",
     "unity": "2021.3",
     "license": "MIT",
     "author": {

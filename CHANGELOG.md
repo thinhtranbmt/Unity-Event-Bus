@@ -2,9 +2,11 @@
 
 ## [1.0.0] - 2026-07-10
 
-Refactored from [adammyhre/Unity-Event-Bus](https://github.com/adammyhre/Unity-Event-Bus).
+Initial release. Written from scratch, inspired by
+[adammyhre/Unity-Event-Bus](https://github.com/adammyhre/Unity-Event-Bus); the notes below
+describe what this implementation does differently from that reference design.
 
-### Fixed
+### Fixed (relative to the reference implementation)
 - `using UnityEditor;` outside `#if UNITY_EDITOR` in `EventBusUtil.cs` broke player builds.
 - Events declared inside assembly-definition (asmdef) assemblies were invisible to
   `PredefinedAssemblyUtil` (it only scanned `Assembly-CSharp` and `-firstpass`), so their
